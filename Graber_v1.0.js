@@ -539,19 +539,23 @@
 				}
 			},
 			max : function(){
-				return Math.max.apply(null, this);
+				var newArr = this.sortAsc();
+				return Math.max.apply(null, newArr);
 			},
 			min : function(){
-				return Math.min.apply(null, this);
+				var newArr = this.sortAsc();
+				return Math.min.apply(null, newArr);
 			},
 			sum : function(){
-				return this.reduce(function(total,num){
+				var newArr = this.sortAsc();
+				return newArr.reduce(function(total,num){
 					return total + num;
 				});
 			},
 			near : function(val){
 				var absnum = Math.abs(val);
-				var nearnum = this.reduce(function(res,num){
+				var newArr = this.sortAsc();
+				var nearnum = newArr.reduce(function(res,num){
 					var curres = Math.abs(absnum - Math.abs(num));
 					return (res = (res[0] < curres ? res : [curres,num]));
 				},[Infinity,-1]);
@@ -559,7 +563,8 @@
 			},
 			far : function(val){
 				var absnum = Math.abs(val);
-				var nearnum = this.reduce(function(res,num){
+				var newArr = this.sortAsc();
+				var nearnum = newArr.reduce(function(res,num){
 					var curres = Math.abs(absnum - Math.abs(num));
 					return (res = (res[0] > curres ? res : [curres,num]));
 				},[0,-1]);
