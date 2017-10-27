@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/demo_template.css">
+		<title>Documentation#3</title>
+		<script type="text/javascript" src="../Graber_v1.0.js"></script>
+		<script type="text/javascript" src="../js/setup.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="heading">
+				<h1>Graber Library v1.0</h1>
+				<div class="explanation">
+					<p>Wellcome to Graber documentation</p>
+					<p>On this section we will Introduce the additional Graber Library Collections for manage the Array and Number Object</p>
+					<p>Below we have 2 panels. The left panel it's sample code of Graber Library and the right panel it's live result</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="demo scroll">
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Array and Number</h4>
+						</div>
+						<div class="description">
+							<p class="para">In Graber we provide some additional library for help manage Array and Number</p>
+							<p class="para">For listing Array with Graber you can use Array.sortAsc() and Array.sortDsc()</p>
+							<p class="para">What the different ? In Graber Sorting Array you don't need convert string number into number object</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Array.sortAsc() & Array.sortDsc() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myArray = ['Lisa','Rudi','Bart','Angela','Murphy'];<br>
+							var myStringNumber = ['9','20','3','1','10'];<br><br>
+							_G('#live_result').add('P').text('Sort Ascending = ' + myArray.sortAsc().join(',') );<br>
+							_G('#live_result').add('P').text('Sort Descending = ' + myStringNumber.sortDsc().join(',') );<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Array max and min</h4>
+						</div>
+						<div class="description">
+							<p class="para">To get max number from Array, you can use Array.max()</p>
+							<p class="para">And to get min number from Array, you can use Array.min()</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Array.max() & Array.min() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myArray = [53,23,65,43,12,60,71];<br>
+							var myStringNumber = ['9','20','3','1','10'];<br><br>
+							_G('#live_result').add('P').text('Max number in myArray = ' + myArray.max() );<br>
+							_G('#live_result').add('P').text('Min number in myStringNumber = ' + myStringNumber.min() );<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Array near and far</h4>
+						</div>
+						<div class="description">
+							<p class="para">Array near and far is to compare some number with array and return the closest/futherest number in array</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Array.near(number) & Array.far(number) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myArray = [53,23,65,43,12,60,71];<br>
+							_G('#live_result').add('P').text('The closest myArray to 61 = ' + myArray.near(61) );<br>
+							_G('#live_result').add('P').text('The futherest myArray to 61 = ' + myArray.min(61) );<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Array Sum</h4>
+						</div>
+						<div class="description">
+							<p class="para">To sum an array and get the result use Array.sum()</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Array.sum() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myArray = [53,23,65,43,12,60,71];<br>
+							_G('#live_result').add('P').text('The sum from myArray = ' + myArray.sum() );<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Scaler</h4>
+						</div>
+						<div class="description">
+							<p class="para">To scale the number from compare two order number and return the scale number, you can use Number.scaler(min,max,comparemin,comparemax)</p>
+							<p class="para">min and max is the limit of your number.</p>
+							<p class="para">comparemin and comparemax is the compare limit number to scale your number.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Number.scaler(min,max,comparemax,comparemin) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var mynumber = 450;<br>
+							var resultNum = mynumber.scaler(0,window.innerHeight,0,360);<br>
+							var reverseResultNum = mynumber.scaler(0,window.innerHeight,360,0);<br><br>
+							_G('#live_result').add('P').text('let scaler our number (450) from 0-window.innerHeight to 0-360 degree = ' + resultNum + ' degree');<br>
+							_G('#live_result').add('P').text('let scaler in reverse way our number (450) from 0-window.innerHeight to 360-0 degree = ' + reverseResultNum + ' degree');<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Fixed</h4>
+						</div>
+						<div class="description">
+							<p class="para">Graber Fixed same as toFixed function but the different is Fixed return number not string</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Number.fixed(decimal) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var mynumber = 450.429163982;<br>
+							var resultNum = mynumber.fixed(2);<br>
+							_G('#live_result').add('P').text('from 450.429163982 we fix to = ' + resultNum);<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Radians</h4>
+						</div>
+						<div class="description">
+							<p class="para">Graber Radians is for convert some number (in degree) to radians number</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Number.rad() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var mydegree = 30;<br>
+							var myradians = mydegree.rad();<br>
+							_G('#live_result').add('P').text('from 30 degree we convert to radians = ' + myradians);<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Degree</h4>
+						</div>
+						<div class="description">
+							<p class="para">Graber Degree is for convert some number (in radians) to degree number</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Number.deg() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myradians = 0.5235987755982988;<br>
+							var mydegree = myradians.deg();<br>
+							_G('#live_result').add('P').text('from 0.5235987755982988 in radians we convert to degree = ' + mydegree.fixed(0));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Viewport</h4>
+						</div>
+						<div class="description">
+							<p class="para">Graber also has way to convert pixel to Viewport size for css style</p>
+							<p class="para">To convert from pixel to viewport width you can use .vw(screenWidth|null)</p>
+							<p class="para">To convert from pixel to viewport height you can use .vh(screenHeight|null)</p>
+							<p class="para">By default screenWidth and screenHeight is set to innerSize of the screen</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .vw(screenWidth|null) & .vh(screenHeight|null) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var mywidth = 473; /* in pixel */<br>
+							var myheight = '240px'; /* from collected css */<br><br>
+							_G('#live_result').add('P').text('473px in viewport width = ' + mywidth.vw() + 'vw');<br>
+							_G('#live_result').add('P').text('240px in viewport height = ' + myheight.vh() + 'vh');<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Vector</h4>
+						</div>
+						<div class="description">
+							<p class="para">Graber vector is object number in 2 dimensional cartesius number</p>
+							<p class="para">To create a vector, you can use new Vector(numX,numY);</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample new Vector(numX,numY) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector = new Vector(20,80);<br><br>
+							var parent = _G('#live_result');<br>
+							mycanvas = new Canvas(200,200,parent[0]);<br>
+							mycanvas.fillBg(50);<br>
+							mycanvas.save();<br>
+							mycanvas.arc(myvector.x,myvector.y,2);<br>
+							mycanvas.fill(255);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector copy, set, and clone</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .copy(other_vector) will copy value from other vector and set as self value.</p>
+							<p class="para">Vector .set(x,y) is for set vector based provide x and y value</p>
+							<p class="para">Vector .clone() will copy value from current vector and return it as new vector.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .copy(other_vector), .set(x,y) & .clone() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector = new Vector(20,80);<br>
+							var otherVector = new Vector(200,500);<br><br>
+
+							_G('#live_result').add('P').text('clone myvector = '+JSON.stringify( myvector.clone() ));<br>
+							_G('#live_result').add('P').text('set myvector = '+JSON.stringify( myvector.set(100,400) ));<br>
+							_G('#live_result').add('P').text('myvector copy from otherVector = '+JSON.stringify( myvector.copy(otherVector) ));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector multiple and divide</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .mult(x,y|null) is for multiple the vector with number.</p>
+							<p class="para">Vector .div(x,y|null) is for divide the vector with number.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .mult(x,y|null) & .div(x,y|null) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector1 = new Vector(2,4);<br>
+							var myvector2 = new Vector(12,18);<br><br>
+							_G('#live_result').add('P').text('myvector1 : '+ JSON.stringify(myvector1) +' * 5 = '+JSON.stringify( myvector1.mult(5) ));<br>
+							_G('#live_result').add('P').text('myvector2 : '+ JSON.stringify(myvector2) +' / (6,9) = '+JSON.stringify( myvector2.div(6,9) ));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector adding and substract</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .add(otherVector) is for adding the vector with other vector.</p>
+							<p class="para">Vector .sub(otherVector) is for substract the vector with other vector.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .mult(x,y|null) & .div(x,y|null) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector1 = new Vector(2,4);<br>
+							var myvector2 = new Vector(12,18);<br>
+							var otherVector = new Vector(5,10);<br><br>
+							_G('#live_result').add('P').text('myvector1 : '+ JSON.stringify(myvector1) +' + otherVector = '+JSON.stringify( myvector1.add(otherVector) ));<br>
+							_G('#live_result').add('P').text('myvector2 : '+ JSON.stringify(myvector2) +' - otherVector = '+JSON.stringify( myvector2.sub(otherVector) ));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector Distance & Distance Square</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .dist(otherVector) will return distance length from delta : vector to other vector.</p>
+							<p class="para">Vector .magSq() will return the length square area of the vector to origin or delta vector</p>
+							<p class="para">Vector .mag() will return the distance  length of vector to origin or delta vector.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .dist(otherVector), .magSq() & .mag() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector1 = new Vector(20,14);<br>
+							var myvector2 = new Vector(40,78);<br>
+							var dist = myvector1.dist(myvector2);<br><br>
+							mycanvas.clear();<br>
+							mycanvas.fillBg(50);<br>
+							mycanvas.save();<br>
+							mycanvas.begin();<br>
+							mycanvas.line(myvector1,myvector2);<br>
+							mycanvas.close();<br>
+							mycanvas.stroke(255);<br>
+							mycanvas.begin();<br>
+							mycanvas.rect(0,0,myvector1.x,myvector1.y);<br>
+							mycanvas.close();<br>
+							mycanvas.stroke('red');<br>
+							mycanvas.begin();<br>
+							mycanvas.line(new Vector(),myvector2);<br>
+							mycanvas.close();<br>
+							mycanvas.stroke('red');<br>
+							mycanvas.restore();<br>
+							_G('#live_result').add('P').text('distance from myvector1 to myvector2 = '+JSON.stringify( dist ));<br>
+							_G('#live_result').add('P').text('length square area from myvector1 to point (0,0) = '+JSON.stringify( myvector1.magSq() ));<br>
+							_G('#live_result').add('P').text('distance from myvector2 to point (0,0) = '+JSON.stringify( myvector2.mag() ));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector Direction, Angle, Dot Produce</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .dir() will return direction (in radians) from vector to origin or delta vector</p>
+							<p class="para">Vector .angle(otherVector) will return the angle (in radians) from vector to other vector</p>
+							<p class="para">Vector .dot(otherVector) will return the dot produce of vector and otherVector</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .dir(), .angle(otherVector) & .dot(otherVector) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector1 = new Vector(2,4);<br>
+							var myvector2 = new Vector(12,18);<br>
+							var angle = myvector1.angle(myvector2);<br>
+							var dir = myvector1.dir();<br>
+							var dot = myvector1.dot(myvector2);<br><br>
+							_G('#live_result').add('P').text('angle from myvector1 to myvector2 = '+JSON.stringify( angle ));<br>
+							_G('#live_result').add('P').text('direction from myvector1 to point (0,0) = '+JSON.stringify( dir ));<br>
+							_G('#live_result').add('P').text('dot produce from myvector1 and myvector2 = '+JSON.stringify( dot ));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector Rotate, Heading, Reverse</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .rotate(radians) will adding current vector angle with set rotate and return new vector by the direction.</p>
+							<p class="para">Vector .heading(radians) will change without adding the vector angle to set angle.</p>
+							<p class="para">Vector .reverse() will reverse the vector value from x,y to -x,-y</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .rotate(radians), .heading(radians) & .reverse() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector1 = new Vector(2,4);<br>
+							var myvector2 = new Vector(2,4);<br><br>
+							_G('#live_result').add('P').text('new angle for myvector1 = '+JSON.stringify( myvector1.rotate(0.5235987755982988) ));<br>
+							_G('#live_result').add('P').text('new direction for myvector2 = '+JSON.stringify( myvector2.heading(0.5235987755982988) ));<br>
+							_G('#live_result').add('P').text('reverse value from myvector1 '+JSON.stringify( myvector1.reverse() ));<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Vector Normalize, Limit, Project</h4>
+						</div>
+						<div class="description">
+							<p class="para">Vector .norm() will return the normal value of vector between 0-1.</p>
+							<p class="para">Vector .limit(max) will limit the vector to set value by square area.</p>
+							<p class="para">Vector .project(other,origin) will return vector projection from other vector by origin point</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample .rotate(radians), .heading(radians) & .reverse() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var myvector1 = new Vector(2,4);<br>
+							var myvector2 = new Vector(6,10);<br>
+							var myvector3 = new Vector(4,12);<br><br>
+							_G('#live_result').add('P').text('normalize myvector1 = '+JSON.stringify( myvector1.norm() ));<br>
+							_G('#live_result').add('P').text('limit myvector2 = '+JSON.stringify( myvector2.limit(3) ));<br>
+							_G('#live_result').add('P').text('projection myvector3 with myvector2 by origin myvector1 = '+JSON.stringify( myvector3.project(myvector2,myvector1) ));<br>
+						</div>
+					</div>
+				</div>
+				<div class="result scroll">
+					<div class="live_result" id="live_result"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
