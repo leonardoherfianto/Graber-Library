@@ -22,3 +22,4 @@ After you download the Graber Library, you can attach it to your HTML file.
 To get help how to use Graber Library Collection, you can see our demo below.
 * [Graber Demo #1](http://htmlpreview.github.io/?https://github.com/leonardoherfianto/Graber-Library/blob/master/demo/grabdoc_1.html) - Manage DOM HTML Element.
 * [Graber Demo #2](http://htmlpreview.github.io/?https://github.com/leonardoherfianto/Graber-Library/blob/master/demo/grabdoc_2.html) - Manage Canvas Element.
+* [Graber Demo #3](http://htmlpreview.github.io/?https://github.com/leonardoherfianto/Graber-Library/blob/master/demo/grabdoc_3.html) - Manage Array,Number and Vector Object.
