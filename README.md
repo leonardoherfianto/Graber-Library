@@ -17,3 +17,8 @@ After you download the Graber Library, you can attach it to your HTML file.
 ```
 <script type="text/javascript" src="Graber_v1.0.js"></script>
 ```
+
+### Demo
+To get help how to use Graber Library Collection, you can see our demo below.
+* [Graber Demo #1](http://htmlpreview.github.io/?https://github.com/leonardoherfianto/Graber-Library/blob/master/demo/grabdoc_1.html) - Manage DOM HTML Element.
+* [Graber Demo #2](http://htmlpreview.github.io/?https://github.com/leonardoherfianto/Graber-Library/blob/master/demo/grabdoc_2.html) - Manage Canvas Element.
