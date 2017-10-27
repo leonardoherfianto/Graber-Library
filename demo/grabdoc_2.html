@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/demo_template.css">
+		<title>Documentation#2</title>
+		<script type="text/javascript" src="../Graber_v1.0.js"></script>
+		<script type="text/javascript" src="../js/setup.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="heading">
+				<h1>Graber Library v1.0</h1>
+				<div class="explanation">
+					<p>Wellcome to Graber documentation</p>
+					<p>On this section we will Introduce the additional Graber Library Collections for manage the Canvas Element</p>
+					<p>Below we have 2 panels. The left panel it's sample code of Graber Library and the right panel it's live result</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="demo scroll">
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Canvas</h4>
+						</div>
+						<div class="description">
+							<p class="para">you can use graber canvas to draw</p>
+							<p class="para">To create canvas element you can use new Canvas(width,height,parent)</p>
+							<p class="para">By default width and height canvas allways match to inner size of screen.</p>
+							<p class="para">By default parent will allways set to document.body</p>
+							<p class="para">Lets create our canvas</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample new Canvas(w,h,p) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var parent = _G('#live_result');<br>
+							mycanvas = new Canvas(400,400,parent[0]);
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas fill background</h4>
+						</div>
+						<div class="description">
+							<p class="para">to fill the background you can use .fillBg(color)</p>
+							<p class="para">in Graber Canvas, argument color present in 3 ways.</p>
+							<p class="para">First as string like HEX ('#fff') and RGBA ('rgba(255,255,255,1)')</p>
+							<p class="para">or as number like (255,255,255,1)</p>
+							<p class="para">or as array like ([255,255,255,1])</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.fillBg(color) </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.fillBg('#fff');<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Rectangle</h4>
+						</div>
+						<div class="description">
+							<p class="para">Canvas Rectangle need 4 argument to create</p>
+							<p class="para">with .rect(x,y,width,height)</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.rect(x,y,w,h)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.begin(); /*same as canvas.context.beginPath() */<br>
+							mycanvas.rect(100,100,200,200);<br>
+							mycanvas.close(); /* same as canvas.context.closePath() */<br>
+							mycanvas.fill(100); /* color will set to static value rgba(100,100,100,1) */<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Clear</h4>
+						</div>
+						<div class="description">
+							<p class="para">on Graber Canvas to clear the canvas you can use .clear()</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.clear()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Arc</h4>
+						</div>
+						<div class="description">
+							<p class="para">on Graber Canvas to create a circle use .arc(x,y,radius,start,end,type)</p>
+							<p class="para">x and y is the center arc. radius is size of the arc</p>
+							<p class="para">start and end is the arc length from 0 - 1 in Graber</p>
+							<p class="para">type is the shape of arc 'chord','pie','open'</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.arc(x,y,radius,start,end,type)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.save(); /* same as canvas.context.save() */<br>
+							mycanvas.fillBg('rgba(255,255,255,1)'); /* use string rgba as color fill */<br><br>
+							mycanvas.arc(50,50,40); /* Full shape arc */<br>
+							mycanvas.fill([255,0,0,1]); /* use array as color will result red color */<br><br>
+							mycanvas.arc(150,50,40,0,0.5); /* Half shape arc */<br>
+							mycanvas.fill(0,255,0,1); /* use number value as color will result green color */<br><br>
+							mycanvas.arc(250,50,40,0,0.8); /* Chord shape arc */<br>
+							mycanvas.fill('skyblue'); /* use color name as value*/<br><br>
+							mycanvas.arc(50,150,40,0,0.2,'pie'); /* Pie shape arc */<br>
+							mycanvas.fill('#ffff00'); /* use hex color as value */<br><br>
+							mycanvas.arc(150,150,40,0,0.7,'open'); /* Open shape arc */<br>
+							mycanvas.lineStyle(4); /* Same as canvas.context.lineWidth */<br>
+							mycanvas.stroke('#ff00ff'); /* use hex color as value */<br><br>
+							mycanvas.restore(); /* same as canvas.context.restore() */
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Line</h4>
+						</div>
+						<div class="description">
+							<p class="para">on Graber Canvas line is use with vector object.</p>
+							<p class="para">Graber has Vector object</p>
+							<p class="para">to create line in canvas use .line(vectorA,vectorB);</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.line(vectorA,vectorB)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							var vecA = new Vector(10,10); /* create vector at x and y position */<br>
+							var vecB = new Vector(300,240); /* create vector at x and y position */<br>
+							mycanvas.save();<br>
+							mycanvas.begin();<br>
+							mycanvas.line(vecA,vecB);<br>
+							mycanvas.close();<br>
+							mycanvas.stroke(170);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Polygon</h4>
+						</div>
+						<div class="description">
+							<p class="para">if you need to create a polygon use .polygon(x,y,radius,side)</p>
+							<p class="para">side is how many side you want for your polygon minimal side is 3</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.polygon(x,y,radius,side)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							mycanvas.save();<br>
+							mycanvas.begin();<br>
+							mycanvas.polygon(200,200,40,5);<br>
+							mycanvas.close();<br>
+							mycanvas.stroke(170);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Path</h4>
+						</div>
+						<div class="description">
+							<p class="para">Canvas Path is use with vector</p>
+							<p class="para">to create a path use .path([vector_array],type)</p>
+							<p class="para">type is open | close</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.path([vector_array],type)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var mypath = [new Vector(50,50), new Vector(200,240), new Vector(10,300)];<br>
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							mycanvas.save();<br>
+							mycanvas.path(mypath,'close');<br>
+							mycanvas.fill(170);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Translate</h4>
+						</div>
+						<div class="description">
+							<p class="para">Canvas Translate is use for translate the position origin</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.translate(x,y)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							mycanvas.save();<br>
+							mycanvas.translate(200,200);<br>
+							mycanvas.arc(0,0,80);<br>
+							mycanvas.fill(170);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Rotate</h4>
+						</div>
+						<div class="description">
+							<p class="para">Canvas Rotate is use for rotate your canvas in radians</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.rotate(radians)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							mycanvas.save();<br>
+							mycanvas.begin();<br>
+							mycanvas.translate(200,200);<br>
+							mycanvas.rotate(0.8);<br>
+							mycanvas.rect(0,0,100,100);<br>
+							mycanvas.close();<br>
+							mycanvas.fill(170);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Scale</h4>
+						</div>
+						<div class="description">
+							<p class="para">To scaling the object you can use .scale(x,y)</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.scale(x,y)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							mycanvas.save();<br>
+							mycanvas.translate(200,200);
+							mycanvas.scale(0.1,0.1);<br>
+							mycanvas.begin();<br>
+							mycanvas.rect(-50,-50,100,100);<br>
+							mycanvas.close();<br>
+							mycanvas.fill(170);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Fill Text</h4>
+						</div>
+						<div class="description">
+							<p class="para">To insert the text will fill in color to canvas use .fillText(text,x,y,option)</p>
+							<p class="para">x and y is the post to insert the text</p>
+							<p class="para">on option you can set the font-family,font-size and textAlign</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.fillText(text,x,y,option)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br><br>
+							mycanvas.save();<br>
+							mycanvas.fillStyle('red'); /* set fill color to red */<br>
+							mycanvas.fillText('ALPHA',100,100, {<br>
+							<i>'font':'20px Arial',</i>
+							<i>'textAlign':'center',</i>
+							});<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Stroke Text</h4>
+						</div>
+						<div class="description">
+							<p class="para">To create an stroke text you can use .strokeText(text,x,y,option)</p>
+							<p class="para">x and y is the post to insert the text</p>
+							<p class="para">on option you can set the font-family,font-size and textAlign</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.strokeText(text,x,y,option)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.save();<br>
+							mycanvas.strokeStyle('red'); /* set fill color to red */<br>
+							mycanvas.strokeText('ALPHA',250,100, {<br>
+							<i>'font':'20px Arial',</i>
+							<i>'textAlign':'center',</i>
+							});<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Line Style</h4>
+						</div>
+						<div class="description">
+							<p class="para">To set your line style you can use .lineStyle(width,cap,join)</p>
+							<p class="para">width for set line width and cap for set line cap (end and start shape of line ).</p>
+							<p class="para">And join for set the join shape on the line.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.lineStyle(width,cap,join)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Canvas Shadow</h4>
+						</div>
+						<div class="description">
+							<p class="para">To set shadow effect in canvas, you can use .shadow(x_offset,y_offset,blur,color)</p>
+							<p class="para">x and y offset is the distance between shadow and canvas object.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Canvas.shadow(x_offset,y_offset,blur,color)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br>
+							mycanvas.save();<br>
+
+							mycanvas.shadow(3,3,5,'rgba(0,0,0,1)');<br>
+							mycanvas.polygon(200,200,80,6);<br>
+							mycanvas.fill(100);<br>
+							mycanvas.restore();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Graber Animator</h4>
+						</div>
+						<div class="description">
+							<p class="para">Graber also has animator engine called Anime. Combine with canvas we can create our animation</p>
+							<p class="para">To start we need to place our function in Anime.onrender.your_function_name = function(){/ /your_code; }</p>
+							<p class="para">After that to run the animation, we use Anime.start()</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Anime.onrender & Anime.start()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							mycanvas.clear();<br>
+							mycanvas.fillBg(255);<br>
+							/* create something to animation */<br>
+							ball = {<br>
+							<i>pos : new Vector(mycanvas.w/2,30),</i>
+							<i>vel : new Vector()</i>
+							};<br>
+							gravity = new Vector(0,1);<br>
+							/* set animation render */<br>
+							Anime.onrender.myAnimation = function(){<br>
+							<i>mycanvas.clear();</i>
+							<i>mycanvas.fillBg(255);</i>
+							<i>if(ball.pos.y+15 >= mycanvas.h){</i>
+							<i><i>ball.vel = ball.vel.mult(-0.99);</i></i>
+							<i><i>ball.pos.y = mycanvas.h - 15;</i></i>
+							<i>};</i>
+							<i>ball.vel.add(gravity);</i>
+							<i>ball.pos.add(ball.vel);</i>
+							<i>mycanvas.begin();</i>
+							<i>mycanvas.arc(ball.pos.x,ball.pos.y,15);</i>
+							<i>mycanvas.fill('coral');</i>
+							<i>mycanvas.close();</i>
+							};<br>
+							/* start animation */<br>
+							Anime.start();
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Stop Animation</h4>
+						</div>
+						<div class="description">
+							<p class="para">To stop the animation you can use .break()</p>
+							<p class="para">And to add a even listener when the animation has stop you can use .onbreak.your_function_name = function(){ //your_code; }</p>
+							<p class="para">To try our code below let run again our last animation example and stop the animation.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Anime.break() & Anime.onbreak</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							/* Click try to stop the animation*/<br>
+							Anime.onbreak.myStopFunction = function(){<br>
+							<i>alert('Anime has stop!');</i>
+							};<br>
+							Anime.break();<br>
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Frame Speed Animation</h4>
+						</div>
+						<div class="description">
+							<p class="para">To change the animation speed you can use .rollSpeed = number;</p>
+							<p class="para">By default the animation roll speed is set to 1.</p>
+							<p class="para">To try our sample below lets run our ball animation first than change the speed.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Anime.rollSpeed = number;</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							/* Click try to change the animation speed*/<br>
+							Anime.rollSpeed = 10<br>
+						</div>
+					</div>
+				</div>
+				<div class="result scroll">
+					<div class="live_result" id="live_result"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,147 @@
+head, body{
+	font-family: Helvetica, Serif, Arial;
+	height: 100vh;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 100vw;
+}
+div, h1, h4, i, input, p {
+	box-sizing: border-box;
+	display: block;
+	position: relative;
+}
+input:focus{
+	outline: none;
+}
+.container{
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+.heading{
+	overflow: hidden;
+	height: 25%;
+	width: 100%;
+}
+.heading > h1{
+	background: #3d928e;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 8px 0;
+	text-align: center;
+}
+.heading .explanation{
+	text-align: center;
+}
+.heading .explanation > p{
+	margin: 5px 0;
+}
+.content{
+	background: #424a4d;
+	height: 75%;
+	overflow: hidden;
+	padding: 10px;
+	width: 100%;
+}
+.content > div{
+	float: left;
+	height: 100%;
+	width: 50%;
+}
+.demo > .sample {
+	background: #424a4d;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	margin-bottom: 10px;
+	padding-bottom: 20px; 
+}
+.demo > .sample > .head {
+	background: #303638;
+}
+.demo > .sample > .head > .title{
+	color: #ff9031;
+	margin: 0;
+	padding: 10px 8px;
+}
+.demo > .sample > .description{
+	color: #4ea0e5;
+	font-size: 14px;
+	font-style: italic;
+	letter-spacing: 0.7px;
+	padding: 8px;
+}
+.demo > .sample > .description > .para{
+	margin: 5px 0;
+}
+.demo > .sample > .callback_button{
+	background: #4d5659;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+	height: 30px;
+}
+.demo > .sample > .callback_button > .callback{
+	background: transparent;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-width: 0 0 0 1px; 
+	color: #e15959;
+	cursor: pointer;
+	float: right;
+	font-style: italic;
+	height: 100%;
+	min-width: 90px;
+}
+.demo > .sample > .callback_button > .samplecode{
+	color: #19b648;
+	float: left;
+	font-size: 15px;
+	font-weight: 600;
+	height: 100%;
+	line-height: 30px;
+	padding-left: 8px;
+}
+.demo > .sample > .codearea{
+	color: #19b648;
+	font-size: 12px;
+	letter-spacing: 1px;
+	padding: 8px;
+}
+.demo > .sample > .codearea i{
+	font-style: normal;
+	padding: 0 0 0 25px;
+}
+.result{
+	padding: 0 10px;
+}
+.result > .live_result{
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	padding: 20px;
+}
+.scroll{
+	overflow: hidden;
+}
+.scroll:hover{
+	overflow-y: auto;
+}
+.scroll:focus{
+	overflow-y: auto;
+}
+.scroll:active{
+	overflow-y: auto;
+}
+.scroll::-webkit-scrollbar{
+	background: transparent;
+	border-style: none;
+	width: .3em;
+}
+.scroll::-webkit-scrollbar-track {
+	background: transparent;
+	border-style: none;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+.scroll::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.3);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+}

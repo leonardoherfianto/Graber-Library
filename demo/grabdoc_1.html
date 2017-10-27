@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/demo_template.css">
+		<title>Documentation#1</title>
+		<script type="text/javascript" src="../Graber_v1.0.js"></script>
+		<script type="text/javascript" src="../js/setup.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="heading">
+				<h1>Graber Library v1.0</h1>
+				<div class="explanation">
+					<p>Wellcome to Graber documentation</p>
+					<p>On this section we will Introduce the basic Graber Library Collections for manage the DOM Element</p>
+					<p>Below we have 2 panels. The left panel it's sample code of Graber Library and the right panel it's live result</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="demo scroll">
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Create and Append DOM Element</h4>
+						</div>
+						<div class="description">
+							<p class="para">With Graber you can create html DOM element.</p>
+							<p class="para">On sample below we make an UL tag with class name listbox, 
+							</p>
+							<p class="para">and continue with create 6 LI tag with class name list and fill with text "created list".</p>
+							<p class="para">Then append to element with id live_result</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.add() </div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('#live_result').add('UL.listbox').add('LI.list*5').text("created list");
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Insert Before and After</h4>
+						</div>
+						<div class="description">
+							<p class="para">If need to insert element before and after you can use Graber selector</p>
+							<p class="para">on first sample below we create new LI and insert before UL children index 3</p>
+							<p class="para">on second sample below we create new LI and insert after UL children index 4 or before index 5</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.add('element'+'(insert after/before)')</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var firstSample = _G('.listbox').add('LI.list(3)').text('new list insert before');<br><br>
+							var secondSample = _G('.listbox').add('LI.list(5)').text('new list insert after');
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Adding CSS Style</h4>
+						</div>
+						<div class="description">
+							<p class="para">You can add stylelist css on DOM element after or when the element is create</p>
+							<p class="para">with .css({'style' : 'value'}) you can add the css style as much you want.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.css({})</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('.listbox').css({<br>
+							<i>'list-style-type':'none',</i>
+							<i>'width' : '300px'</i>
+							}).child().css({<br>
+							<i>'border':'1px solid rgba(0,0,0,0.09)',</i>
+							<i>'padding':'5px 6px'</i>
+							});
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Select Element</h4>
+						</div>
+						<div class="description">
+							<p class="para">If you want to select some element in children or from Graber HTML collect element,</p>
+							<p class="para">you can use .select(start_index, Increasement, end_index | null);</p>
+							<p class="para">On sample below we will select some element from our list element and create stripted style.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.select(start_index, Increasement, end_index | null)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('.list').select(0,2).css({<br>
+							<i>'background':'rgb(111, 58, 58)',</i>
+							<i>'color':'rgb(232, 206, 71)'</i>
+							})
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Loop</h4>
+						</div>
+						<div class="description">
+							<p class="para">If you want do loop in Graber html collection element,</p>
+							<p class="para">you can use .map(function(item,index){});</p>
+							<p class="para">On sample below we will grab all LI with class name list and fill with some data.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.map(function(item,index){ //your code })</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var mydata = ['ALPHA','BRAVO','CHARLIE','DELTA','ECHO','FOXTROT','GOLF'];<br>
+							_G('.list').map(function(item,index){<br>
+								<i>item._G().text(mydata[index]);</i>
+							});
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Get Style value</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber when you want to get the style value and it not exist in property style,</p>
+							<p class="para">Graber will return value from Computed Style. You can use .css('style-name')</p>
+							<p class="para">On sample below we will get LI style height when it not exist or unset.</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.css('style-name')</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var styleHeight = _G('.list').css('height');<br><br>
+							_G('#live_result').add('P').text('height = '+styleHeight.join(','));
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">AddEventListener</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can also add event listener,</p>
+							<p class="para">with .on('event', callback_function);</p>
+							<p class="para">On sample below we add event click on our list, go ahead to try click</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.on('event', callback_function)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('.list').on('click',function(e){<br>
+							<i>alert(this.innerHTML);</i>
+							<i>console.log(e)</i>
+							})
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">RemoveEventListener</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can also remove event listener, with .off('event', function_name)</p>
+							<p class="para">if you just want remove the last event you added you just use .off()</p>
+							<p class="para">On sample above we just added the click event so to remove you can see example below</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.off('event', function_name)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('.list').off(); //remove the last added event.
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Set and Get Property Element</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can set property element with .prop({'name':'value'});</p>
+							<p class="para">To get the property value you can use .prop('prop-name')</p>
+							<p class="para">some rule is attach in this method where set must in object and get in string</p>
+							<p class="para">On sample below we set prop label to the list element and get the prop tagname</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.prop({'name':'value'}) or Graber.prop('prop-name')</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var list_tagname = _G('.list').prop({'label':'myLabel'}).prop('tagName');<br><br>
+							_G('#live_result').add('P').text('tagname = '+list_tagname.join(', '));
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Set and Get Attribute Element</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can set attribute element with .attr({'name':'value'});</p>
+							<p class="para">To get the property value you can use .attr('attr-name')</p>
+							<p class="para">some rule is attach in this method where set must in object and get in string</p>
+							<p class="para">On sample below we set attr title to the list element and get attr we create</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.attr({'name':'value'}) or Graber.attr('attr-name')</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('.list').attr({'title':'myTitle'});<br><br>
+							_G('#live_result').add('P').text('Attribute Title = ' + _G('.list').attr('title').join(', '));
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">innerHTML and innerText</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can set or get innerHTML with .html('your DOM') or just .html() to get.</p>
+							<p class="para">To insert or get plain text in Graber you can use .text('your text') or just .text() to get</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.html('your DOM'|null) or Graber.text('your text'|null)</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							_G('#live_result').add('P').text('Hello'); /* add text to P element. */<br><br>
+							_G('#live_result').add('P').html('&lt;b>Hello&lt;/b>'); /* add innerHTML to P element. */
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">BoundingClientRect and Offset Element</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can get BoundingClientRect with .bound();</p>
+							<p class="para">And get Offset Element with .offset();</p>
+							<p class="para">On sample below we will get BoundingClientRect and Offset Element from UL</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.bound() and Graber.offset()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var bound = _G('.listbox').bound();
+							var offset = _G('.listbox').offset();
+							_G('#live_result').add('P').text('BoundingClientRect = ' + JSON.stringify(bound[0]));
+							_G('#live_result').add('P').text('Offset Element = ' + JSON.stringify(offset[0]));
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Add,Remove and Has Class</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber to add a new class in element use .addClass(className);</p>
+							<p class="para">To check is the element already has the class use .hasClass(className);</p>
+							<p class="para">To remove the class from element use .removeClass(className);</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.addClass(), Graber.hasClass(), Graber.removeClass()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var ul = _G('.listbox').addClass('myNewClass');<br>
+							if(ul.hasClass('myNewClass')[0]){<br>
+								<i>_G('#live_result').add('P').text('Already has myNewClass as className');</i>
+								<i>ul.removeClass('listbox');</i>
+								<i>_G('#live_result').add('P').text(ul.prop('className').join(''));</i>
+							};
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Parent,Child and Siblings Element</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber you can get a parent,child, and siblings in simple way</p>
+							<p class="para">use .parent() to get parent element and .child() to get child element.</p>
+							<p class="para">use .siblings() to get all siblings element</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.parent(), Graber.child(), Graber.siblings()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							console.log( _G('.list').parent() );<br><br>
+							console.log( _G('UL').child() );<br><br>
+							console.log( _G('UL').siblings() );
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">Prev and Next Element Siblings</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber to get next element sibling use .next()</p>
+							<p class="para">and to get previous element sibling use .prev()</p>
+							<p class="para">In sample below we will get list index 3 and get prev sibling then</p>
+							<p class="para">we get the next sibling from index 3</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.prev() and Graber.next()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">
+							var list = _G('.list');<br>
+							var prev = list[3]._G().prev();<br>
+							var next = list[3]._G().next();<br>
+							_G('#live_result').add('P').text('my prev sibling innerText is : ' + prev.text() + ' and my innerText is : '+list[3]._G().text());<br>
+							_G('#live_result').add('P').text('and my next sibling innerText is : ' + next.text());
+						</div>
+					</div>
+					<div class="sample">
+						<div class="head">
+							<h4 class="title">document on ready</h4>
+						</div>
+						<div class="description">
+							<p class="para">On Graber to prefer your script and run when the document element was ready is _G().onsurf(callback)</p>
+						</div>
+						<div class="callback_button">
+							<div class="samplecode">Code Sample Graber.onsurf()</div><input type="button" value="Try" class="callback">
+						</div>
+						<div class="codearea">	
+						</div>
+					</div>
+				</div>
+				<div class="result scroll">
+					<div class="live_result" id="live_result"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
